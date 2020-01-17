@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title> Projeto APDZ </title>
+	<meta charset="utf-8">
+</head>
+<style>
+h1{
+color:white;	
+background-color:blue;
+font-family:arial;	
+}
+
+h3{
+color:orange;
+font-family:arial;
+}
+input[type="text"], [type="email"]{
+padding:5px;
+}
+input[type="date"]{
+padding:2px;
+}
+select{
+  width: 100%;
+  padding: 10px 10px;
+  border: solid;
+  border-radius: 4px;
+  background-color: white;
+}
+
+form{
+    display: block;
+}
+.forms > form {
+    display: inline-block;
+    width: auto;
+	padding:10px;
+	margin:5px;
+}
+.forms> form {
+    display: inline-block;
+    width: auto;
+	padding:10px;
+	margin:5px;
+}
+a{
+position:absolute;
+height:100px;
+right:20px;
+}
+a:visited {
+  color: black; /* cor do texto do botão que já foi clicado */
+  background:#FF4040; /* cor de fundo alternativo do botão que já foi clicado */
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF4040), to(#CD0000)); /* gradiente de fundo do botão que já foi clicado */
+  background: -moz-linear-gradient(top, #FF4040, #CD0000); /* gradiente de fundo do botão que já foi clicado */
+  border:1px solid #8B0000; /* cor da borda do botão que já foi clicado */
+  text-decoration:none;
+  padding:5px;
+  outline:none;
+  -moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+  -webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+
+
+
+  -goog-ms-border-radius:5px; /* valor do arredondamento das pontas do botão */
+  border-radius:5px; /* valor do arredondamento das pontas do botão */
+}
+
+
+.sair{
+  position:absolute;
+  height:100px;
+  right:20px;     
+  color: white;
+}
+a.sair{
+color: white; /* cor do texto do botão */
+text-decoration:none;
+outline:none;
+-moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+-webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+}
+
+input[type="checkbox"]{
+margin:5px;	
+}
+body{
+overflow:scroll;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size:1em;
+}
+input[type=file]{
+  border:solid;
+  background-color:rgb(240, 240, 240);
+  padding:50px 10px;
+}
+
+</style>
+<script>
+function enviar(){
+var nome = document.getElementById("nome");
+	 if (nome.value != "") {
+        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
+        window.location.assign('/')
+    }else{
+        alert('Preencha todos os campos obrigatórios!')
+    }
+}
+
+function redefinir(){
+  var txt;
+  if (confirm("Você tem certeza?")) {
+    window.location.reload();
+  } else {
+    alert("Ok!");
+  }
+}
+
+function cancelar()
+{
+alert("Cancelado!");
+window.location.assign('/')
+}
+
+function ValidaCPF(){   
+
+    var ao_cpf=document.forms.formulario.ao_cpf.value; 
+    var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;     
+    if (cpfValido.test(ao_cpf) == false)    { 
+         
+       ao_cpf = ao_cpf.replace( /\D/g , ""); //Remove tudo o que não é dígito
+                
+       if (ao_cpf.length==11){
+          ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+          ao_cpf = ao_cpf.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+          //de novo (para o segundo bloco de números)
+          ao_cpf = ao_cpf.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+                    
+          var valorValido = document.getElementById("ao_cpf").value = ao_cpf;
+        }else{
+          console.log("CPF invalido");
+        }
+            
+    }
+    }
+
+function ValidaRG(){
+
+    var ao_rg=document.forms.formulario2.ao_rg.value; 
+    var rgValido = /^(([0-11]{2}.[0-11]{3}.[0-11]{3}-[0-11]{2}))$/;     
+    if (rgValido.test(ao_rg) == false)    { 
+         
+       ao_rg = ao_rg.replace( /\D/g , ""); //Remove tudo o que não é dígito
+                
+       if (ao_rg.length==9){
+          ao_rg = ao_rg.replace( /(\d{2})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+          ao_rg = ao_rg.replace( /(\d{3})(\d)/ , "$1.$2"); //Coloca um ponto entre o terceiro e o quarto dígitos
+          //de novo (para o segundo bloco de números)
+          ao_rg = ao_rg.replace( /(\d{3})(\d{1,2})$/ , "$1-$2"); //Coloca um hífen entre o terceiro e o quarto dígitos
+                    
+          var valorValido = document.getElementById("ao_rg").value = ao_rg;
+        }else{
+          console.log("RG inválido");
+        }
+            
+    }
+}
+
+function FormataFixo(){
+   
+    var telfixo = document.forms.telefones.telfixo.value;
+    var telValido = /^(([0-10]{1}.[0-10]{4}-[0-10]{4}))$/;
+    if (telValido.test(telfixo) == false) {
+
+        telfixo = telfixo.replace( /\D/g , "");
+
+        if (telfixo.length==10){
+            telfixo = telfixo.replace( /(\d{1})(\d)/ , "($1$2)");
+            telfixo - telfixo.replace( /(\d{4})(\d)/ , "$1$2");
+            telfixo = telfixo.replace( /(\d{4})(\d)/ , "$1-$2");
+
+            var valorValido = document.getElementById("telfixo").value = telfixo;
+        }else{
+            console.log("Telefone Inválido!")
+        }
+    }
+
+}
+
+function FormataCelular(){
+   
+    var celular = document.forms.NumCelular.celular.value;
+    var celValido = /^(([0-10]{1}.[0-11]{4}-[0-11]{5}))$/;
+    if (celValido.test(celular) == false) {
+
+        celular = celular.replace( /\D/g , "");
+
+        if (celular.length==11){
+            celular = celular.replace( /(\d{1})(\d)/ , "($1$2)");
+            celular - celular.replace( /(\d{4})(\d)/ , "$1$2");
+            celular = celular.replace( /(\d{5})(\d)/ , "$1-$2");
+
+            var valorValido = document.getElementById("celular").value = celular;
+        }else{
+            console.log("Celular Inválido!")
+        }
+    }
+
+}
+</script>
+<body>
+	<h1>Jovem Aprendiz<a href="/" target="_self" class="sair">Sair</a></h1>
+	<h3>Dados Pessoais <a href="/impressão" target="_blank">Ver versão para impressão</a><br></h3>
+	<h4>Dados Obrigatórios *</h4>
+<!--Primeira div -->
+<div class="forms">
+    <form>
+Nome*<br>
+<input type="text" id="nome" size="100" autocomplete="off" autofocus="on" required placeholder="Nome Completo"><br><br>
+Nome da mãe*<br>
+<input type="text" name="nomeM" size="100" autocomplete="off" required placeholder="Nome Completo">
+    </form>
+	
+    <form id="formulario">
+Data de nascimento*<br>
+<input type="date" name="data" required><br><br>
+CPF*<br>
+<input type="text" id="ao_cpf" name="cpf" required autocomplete="off" maxlength="11" onblur="ValidaCPF()" placeholder="xxx.xxx.xxx-xx"><br>
+    </form>
+	<form id="formulario2">
+Sexo*<br>
+<select name="Genero" required>
+	<option value="masculino">Masculino</option>
+	<option value="feminino">Feminino</option>
+	<option value="outro">Outro</option>
+</select><br>
+RG*<br>
+<input type="text" id="ao_rg" name="rg" required maxlength="9" autocomplete="off" onblur="ValidaRG()" placeholder="xx.xxx.xxx-xx">
+	</form>
+	<form>
+Orgão Expedidor<br>
+<input type="text" name="orgaoexpedidor" required autocomplete="off"> <a target="_blank" href="https://www.significados.com.br/orgao-expedidor/" >O que é orgão expedidor?</style></a>
+	</form>
+</div>
+<!--Segunda Div -->
+<div class="forms">
+<form>
+Endereço*<br>	
+<input type="text" name="endereço" size="182" required placeholder="Ex: R. José das Graças, 0 - Bairro Glória"><br>
+</form><br>
+
+<form id="telefones">
+Telefone Fixo*<br>
+<input type="text" id="telfixo" maxlength="10" name="telefoneF" required onblur="FormataFixo()" placeholder="(xx)xxxx-xxxx" autocomplete="off">
+</form>
+<form id="NumCelular">
+Telefone Celular*<br>
+<input type="text" id="celular" maxlength="11" name="telefoneC" required onblur="FormataCelular()" placeholder="(xx)xxxxx-xxxx" autocomplete="off">	
+</form>
+<form id="formulario">
+Email*<br>
+<input type="email" name="email" size="50" required autocomplete="off" placeholder="email@email.com">
+</form>
+</div>
+<svg width="1900" height="2">
+ <rect width="1900" height="1000" style="fill:rgb(0 0 255);stroke-width:10;stroke:rgb(0 0 255)" />
+</svg><br>
+<!--Aqui começa a segunda parte do formulário-->
+<h3>Escolaridade</h3>
+<div class="forms">
+<form>
+Escola*<br>
+<input type="text" name="escola" size="100" placeholder="Ex: Escola Estadual Messias Pedreiro"><br>
+</form>
+<form>
+Escolaridade*<br>
+<select name="escolaridade">
+	<option value="fundamental">Fundamental</option>
+	<option value="médio">Médio</option>
+	<option value="superior">Superior</option>
+</select><br>
+</form>
+<form>
+Série<br>
+<input type="text" name="série" size="7" placeholder="Ex: 2°">
+	
+</form>
+</div>
+<svg width="1900" height="2">
+ <rect width="1900" height="1000" style="fill:rgb(0 0 255);stroke-width:10;stroke:rgb(0 0 255)" />
+</svg><br>
+<!--Aqui começa a terceira parte do formulário-->
+<h3>Atividades Extraescolar</h3>
+<fieldset>
+	<legend>Atividades</legend>
+<div class="forms">
+<form>
+  <input type="checkbox" name="esporte" value="pratice">Pratica Esportes
+</form>
+<form>
+  <input type="checkbox" name="lang" value="lang">Estuda outra lingua
+</form>
+<form>
+  <input type="checkbox" name="music" value="música">Estuda Música
+</form>
+<form>
+  <input type="checkbox" name="voluntario" value="voluntario">Voluntariado	
+</form>
+<form>
+  <input type="checkbox" name="robotica" value="robotica">Robótica
+</form>
+<form>
+  <input type="checkbox" name="dança" value="dança">Dança
+</form>
+<form>
+  <input type="checkbox" name="leitura" value="leitura">Leitura
+</form>
+<form>
+  <input type="checkbox" name="culinaria" value="culinaria">Culinária
+</form>
+</form><br><br>
+	
+<form>
+  <input type="checkbox" name="programação" value="dev">Programação	
+</form>
+	<form> </form>
+  <input type="checkbox" name="desenho" value="art">Desenhos
+</form>
+	<form> <form> </form> 
+  <input type="checkbox" name="outros" value="outro">Outros
+  <input type="text" name="outros" size="100">
+</form>
+</div>
+</fieldset>
+<svg width="1900" height="2">
+ <rect width="1900" height="1000" style="fill:rgb(0 0 255);stroke-width:10;stroke:rgb(0 0 255)" />
+</svg><br>	
+<!--Aqui começa a quarta parte do formulário-->
+<h3>Dados Corporativos</h3>
+<div class="forms">
+<form>
+Gestor Imediato*<br>
+<input type="text" name="gestor" size="100" placeholder="Ex: Flávia Oliveira">
+</form>
+<form>
+Operação<br>
+<input type="text" name="operação"size="50">
+	<form> </form>
+<form>
+<label for="foto">Escolha um arquivo de foto:</label><br>
+<input type="file"
+       id="foto" name="foto"
+       accept="image/png, image/jpeg">
+</form>
+</form><br>
+<form>
+Turno*<br><br>
+<input type="radio" name="matutino" value="matutino">Matutino
+<input type="radio" name="vespertino" value="vespertino">Vespertino
+</form>
+<form>
+Data de admissão<br>
+<input type="date" name="data">	
+</form>
+<form>
+Data Rescisão<br>
+<input type="date" name="data">	
+</form>
+<form> 
+Matrícula<br>
+<input type="text" name="matricula" autocomplete="off">
+</form>
+<form>
+Ativo<br>
+<input type="checkbox" name="ativo" value="ativo">Sim 
+</form>
+</div>
+<div class="forms">
+<form>
+Observação<br>
+<textarea name="message" rows="5" cols="230" placeholder="Deixe alguma observação caso tenha!"></textarea>
+<br>
+<input type="button" onclick="enviar()" value="Enviar">  
+<input type="button" onclick="cancelar()" value="Cancelar">
+<input type="button" onclick="redefinir()" value="Redefinir">
+</form>
+</div>
+	
+	
+	
+</body>
+</html>
