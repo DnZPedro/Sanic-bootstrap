@@ -3,46 +3,7 @@
 <head>
 	<title>Impressão</title>
 	<meta charset="utf-8">
-<style>
-table, th, td {
-    border: 2px solid black;
-    border-collapse: collapse;
-    margin-left:50px;
-    margin-right:50px;
-    font-family:arial;
-  }
-  th, td {
-    padding: 5px;
-    text-align: left;  
-  }
-  th{
-  height:20px;	
-  }
-  table#t01{
-      width:90%;
-      padding:50px;
-  }
-  h2{
-      margin-left:250px;
-  }
-  .areafoto{
-      float:left;
-      margin-top:10px;
-  }
-  .areafoto svg{
-      width:150px;
-      margin-left:50px;
-  }
-  .areatexto p{
-  display: inline-block;
-  width: 50%;
-  margin:2%;
-  vertical-align:top;
-  font-family:arial;
-  font-size:25px;
-  }
-</style>
-
+	<link rel="stylesheet" type="text/css" href="/styles/styleImpressao.css">
 </head>
 <body>
 <div class="areafoto">
@@ -51,7 +12,7 @@ table, th, td {
 </svg>
 </div>
 <div class="areatexto">
-	<p>Jovem Aprendiz<br><br> Nome do Jovem Aprendiz</p>
+	<p>Jovem Aprendiz<br><br> Nome do Jovem Aprendiz<input type="button" class="imprimir" value="Imprimir" onclick="window.print();"></p>
 </div><br>
 <table style="width:90%">
   <tr>
@@ -154,18 +115,6 @@ table, th, td {
 	
 	
 	
-	
-	
-	
 </body>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 </html>
