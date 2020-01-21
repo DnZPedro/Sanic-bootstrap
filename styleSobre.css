@@ -1,0 +1,50 @@
+h1{
+	color:white;
+	text-align:center;
+    }
+    p{
+    color: black;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: solid;
+    }
+    a.visited{
+        color:black;
+    }
+    .exemplo {
+        margin: 0px;
+}
+a.exemplo:link {
+    color: white; /* cor do texto do botão */
+    background: blue; /* cor de fundo alternativo , aparecerá nos navegadores que não aceitam CSS3 */
+    text-decoration:none;
+    padding: 10px 32px;;
+    outline:none;
+    -moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    -webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+
+ 
+
+    -goog-ms-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    border-radius:5px; /* valor do arredondamento das pontas do botão */
+}
+a.exemplo:visited {
+    color:#FFFFFF; /* cor do texto do botão que já foi clicado */
+    background:#FF4040; /* cor de fundo alternativo do botão que já foi clicado */
+    background: -webkit-gradient(linear, left top, left bottom, from(#FF4040), to(#CD0000)); /* gradiente de fundo do botão que já foi clicado */
+    background: -moz-linear-gradient(top, #FF4040, #CD0000); /* gradiente de fundo do botão que já foi clicado */
+    border:1px solid #8B0000; /* cor da borda do botão que já foi clicado */
+    text-decoration:none;
+    padding:5px;
+    outline:none;
+    -moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    -webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+
+ 
+
+    -goog-ms-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    border-radius:5px; /* valor do arredondamento das pontas do botão */
+}
+body, html{
+    background-image: url(/minimalist-desktop-37.jpg);
+}

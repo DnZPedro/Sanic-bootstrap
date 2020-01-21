@@ -1,0 +1,49 @@
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left:50px;
+    margin-right:50px;
+    font-family:arial;
+  }
+  th, td {
+    padding: 5px;
+    text-align: left;  
+  }
+  th{
+  height:20px;	
+  }
+  table#t01{
+      width:90%;
+      padding:50px;
+  }
+  h2{
+      margin-left:250px;
+  }
+  .areafoto{
+      float:left;
+      margin-top:10px;
+  }
+  .areafoto svg{
+      width:150px;
+      margin-left:50px;
+  }
+  .areatexto p{
+  display: inline-block;
+  width: 50%;
+  margin:2%;
+  vertical-align:top;
+  font-family:arial;
+  font-size:25px;
+  }
+
+  .imprimir{
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-decoration: none;
+    margin-left: 1385px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: large;
+  }

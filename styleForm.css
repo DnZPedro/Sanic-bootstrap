@@ -1,0 +1,108 @@
+h1{
+    color:white;	
+    background-color:blue;
+    font-family:arial;	
+    }
+    
+    h3{
+    color:orange;
+    font-family:arial;
+    }
+    input[type="text"], [type="email"]{
+    padding:5px;
+    }
+    input[type="date"]{
+    padding:2px;
+    }
+    select{
+      width: 100%;
+      padding: 10px 10px;
+      border: solid;
+      border-radius: 4px;
+      background-color: white;
+    }
+    
+    form{
+        display: block;
+    }
+    .forms > form {
+        display: inline-block;
+        width: auto;
+        padding:10px;
+        margin:5px;
+    }
+    .forms> form {
+        display: inline-block;
+        width: auto;
+        padding:10px;
+        margin:5px;
+    }
+    a{
+    position:absolute;
+    height:100px;
+    right:20px;
+    }
+    a:visited {
+      color: black; /* cor do texto do botão que já foi clicado */
+      background:#FF4040; /* cor de fundo alternativo do botão que já foi clicado */
+      background: -webkit-gradient(linear, left top, left bottom, from(#FF4040), to(#CD0000)); /* gradiente de fundo do botão que já foi clicado */
+      background: -moz-linear-gradient(top, #FF4040, #CD0000); /* gradiente de fundo do botão que já foi clicado */
+      border:1px solid #8B0000; /* cor da borda do botão que já foi clicado */
+      text-decoration:none;
+      padding:5px;
+      outline:none;
+      -moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+      -webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    
+    
+    
+      -goog-ms-border-radius:5px; /* valor do arredondamento das pontas do botão */
+      border-radius:5px; /* valor do arredondamento das pontas do botão */
+    }
+    
+    
+    .sair{
+      position:absolute;
+      height:100px;
+      right:20px;     
+      color: white;
+    }
+    a.sair{
+    color: white; /* cor do texto do botão */
+    text-decoration:none;
+    outline:none;
+    -moz-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    -webkit-border-radius:5px; /* valor do arredondamento das pontas do botão */
+    }
+    
+    input[type="checkbox"]{
+    margin:5px;	
+    }
+    body{
+    overflow:scroll;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      resize: none;
+    }
+    input[type=button], input[type=submit], input[type=reset] {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 10px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size:1em;
+    }
+    input[type=file]{
+      border:solid;
+      background-color:rgb(240, 240, 240);
+      padding:50px 10px;
+    }
+    
