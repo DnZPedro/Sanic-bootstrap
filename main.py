@@ -4,8 +4,11 @@ from sanic.response import text
 from sanic.response import html
 from sanic import response
 
-app = Sanic('Myapp')
+app = Sanic('Teste')
 
+app = Sanic('Jovem Aprendiz')
+
+#Inicio da aplicação
 @app.route('/')
 async def index(request):
     return await response.file_stream('index.html')
@@ -14,6 +17,12 @@ async def index(request):
 async def index(request):
     return await response.file_stream('login.html')
 
+#Primeira página 
+@app.route('/login')
+async def login(request):
+    return await response.file_stream('login.html')
+
+#Formulário
 @app.route("/formulário", methods=['POST'])
 async def handle_request4(request):
     if request.method == 'POST':
@@ -28,8 +37,30 @@ async def imprime(request):
 async def recupere(request):
     return await response.file_stream('recupere.html')
 
-#Requests
+#Pasta com styles
+@app.route('/styles/styleForm.css')
+async def form(request):
+    return await response.file_stream('styles/styleForm.css')
 
+@app.route('/styles/styleLogin.css')
+async def login(request):
+    return await response.file_stream('styles/styleLogin.css')
+
+@app.route('/styles/styleImpressao.css')
+async def login(request):
+    return await response.file_stream('styles/styleImpressao.css')
+
+@app.route('/styles/styleRecupere.css')
+async def login(request):
+    return await response.file_stream('styles/styleRecupere.css')
+
+
+#Pasta com scripts
+@app.route('/scripts/scriptForm.js')
+async def script(request):
+    return await response.file_stream('scripts/scriptForm.js')
+
+#Requests
 @app.route('/js/scrolling-nav.js')
 async def request7(request):
     return await response.file_stream('js/scrolling-nav.js')
