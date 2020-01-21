@@ -4,7 +4,7 @@ from sanic.response import text
 from sanic.response import html
 from sanic import response
 
-app = Sanic('Teste')
+app = Sanic('Myapp')
 
 @app.route('/')
 async def index(request):
